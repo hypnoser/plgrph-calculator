@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://ps.plgrph.com/sitemap.xml
+Sitemap: https://pc.plgrph.com/sitemap.xml
