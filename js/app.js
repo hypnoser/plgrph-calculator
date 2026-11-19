@@ -355,7 +355,7 @@ window.APP_API = (function () {
   }
 
   function exportJson(state, safeResp, dateStr) {
-    var filename = 'polygraph-suite-' + safeResp + dateStr + '.json';
+    var filename = 'polygraph-calculator-' + safeResp + dateStr + '.json';
     var blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
@@ -388,7 +388,7 @@ window.APP_API = (function () {
           });
         }
         zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } }).then(function (blob) {
-          var filename = 'polygraph-suite-' + safeResp + dateStr + '.zip';
+          var filename = 'polygraph-calculator-' + safeResp + dateStr + '.zip';
           var url = URL.createObjectURL(blob);
           var a = document.createElement('a');
           a.href = url; a.download = filename; a.click();
@@ -490,7 +490,7 @@ window.APP_API = (function () {
         buildExportPayload(pgseExportState, function (err, payload) {
           if (err) { pgseExportConfirm.disabled = false; pgseExportError.textContent = S.err_jszip_missing; pgseExportError.style.display = 'block'; return; }
           encryptToPgse(p1, payload.bytes).then(function (pgseText) {
-            var filename = 'polygraph-suite-' + pgseExportSafeResp + pgseExportDateStr + '.pgse';
+            var filename = 'polygraph-calculator-' + pgseExportSafeResp + pgseExportDateStr + '.pgse';
             downloadBlob(new TextEncoder().encode(pgseText), 'application/json', filename);
             pgseExportConfirm.disabled = false;
             closePgseExportModal();
@@ -650,7 +650,7 @@ window.APP_API = (function () {
         var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
         var url = URL.createObjectURL(blob);
         var a = document.createElement('a');
-        a.href = url; a.download = 'polygraph-suite-' + safeResp + dateVal + '.md';
+        a.href = url; a.download = 'polygraph-calculator-' + safeResp + dateVal + '.md';
         a.click();
         URL.revokeObjectURL(url);
       });
