@@ -9,5 +9,5 @@
 
 ## Правила
 - Файли калькулятора не змінювати без потреби: дані користувачів лежать у localStorage/IndexedDB цього origin (`polygraph_suite_data`, `suite_auth`, IndexedDB для нотаток).
-- Шрифти — self-hosted (`/assets/fonts/`), зовнішніх CDN немає (крім Google Analytics G-Q7JS2JHVG7).
+- Шрифти — self-hosted (`/assets/fonts/`), зовнішніх CDN немає. Аналітика — Cloudflare Web Analytics (вбудовується Cloudflare на рівні зони plgrph.com, без cookie); Google Analytics прибрано 2026-11-19.
 - Canonical-адреси: `https://pc.plgrph.com/...`; зміна домену потребує заміни в `pr/*`, `sitemap.xml`, `robots.txt`, `CNAME`.
